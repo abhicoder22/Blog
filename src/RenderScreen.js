@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -12,10 +12,7 @@ import {
 const RenderScreen = ({navigation}) => {
   const [fields, setFields] = useState([{value: null}]);
 
-  const [textValue, setTextValue] = useState('');
-  const [numInputs, setNumInputs] = useState(1);
-
-  function handleChange(i, event) { 
+  function handleChange(i, event) {
     const values = [...fields];
     values[i].value = event.target.value;
     setFields(values);
@@ -66,7 +63,7 @@ const RenderScreen = ({navigation}) => {
               value={field.value}
               onChangeText={text => handleChange(idx, text)}
             />
-          </View>  
+          </View>
         );
       })}
     </View>
